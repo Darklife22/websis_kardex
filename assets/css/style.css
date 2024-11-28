@@ -1,0 +1,242 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+header {
+    margin-top: 90px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header img {
+    height: 50px;
+}
+header h1 {
+    margin: 0;
+    font-size: 18px;
+}
+.main-nav {
+    background-color: #ebebeb;
+    height: 70px;
+    color: rgb(69, 69, 69);
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: flex-start; /* Alinea los elementos al lado izquierdo */
+    padding: 10px 20px; /* Ajusta los márgenes internos */
+    position: fixed;
+    top: 0; /* Posición superior de la barra */
+    left: 0; /* Alinea al borde izquierdo */
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    z-index: 1000; /* Coloca la barra por encima de otros elementos */
+}
+
+.main-nav a {
+    margin: 0 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-size: 17px;
+    color: rgb(139, 139, 139);
+    display: flex;
+    align-items: center; /* Centra el texto dentro del enlace */
+    height: 100%; /* Asegura que se alinee completamente con la altura del nav */
+}
+
+.main-nav a:hover {
+    color: #000; /* Cambia el color al pasar el ratón por encima */
+}
+
+/* Resalta el enlace activo */
+.main-nav a[style] {
+    background-color: #145284;
+    color: gold;
+    padding: 10px 15px;
+}
+
+.main-nav img:last-child {
+    width: 150px;
+    margin-left: auto; /* Empuja esta imagen al lado derecho */
+}
+
+.container {
+    background: white;
+    padding: 2px;
+    margin-top: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.kardex-header {
+    background-color: #ffffff;
+}
+
+.kardex-header h2{
+    background-color: #145284;
+    margin: 0px;
+    height: 40px;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.informacion{
+    padding: auto;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.inf-kardex {
+    display: flex; /* Coloca los elementos en línea */
+    align-items: center; /* Centra verticalmente los elementos */
+    background-color: #a8a8a8; /* Fondo azul */
+    color: black; /* Color del texto */
+    font-weight: bold; /* Texto en negrilla */
+    font-size: 14px; /* Ajusta el tamaño de la letra */
+    line-height: 1.5; /* Espaciado entre líneas del párrafo */
+}
+
+.inf-kardex img {
+    width: 30px; /* Ajusta el tamaño de la imagen */
+    height: 30px; /* Ajusta el tamaño de la imagen */
+    margin-bottom: -8px;
+}
+
+.inf-kardex p {
+    margin: 0; /* Elimina márgenes adicionales del párrafo */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+table, th, td {
+    border: 1px solid #dfdfdf;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #343434;
+    font-size: 15px;
+}
+
+.nombre-materia{
+    text-align: left;
+    align-self: flex-start;
+}
+th {
+    background-color: #d2d9e2;
+    color: rgb(69, 69, 69);
+}
+.highlight {
+    background-color: #ffffcc;
+}
+
+.barra-nav {
+    background-color: #145284;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center;
+    height: 38px;
+    padding: 0 20px; /* Espaciado interno para dispositivos pequeños */
+
+}
+
+.barra-nav a {
+    text-decoration: none;
+    color: white;
+    flex: 1; /* Los enlaces ocupan espacio igual */
+    padding: 0;
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 14px; /* Tamaño de texto ajustable */
+    line-height: 38px; /* Centra el texto verticalmente */
+    position: relative; /* Necesario para el pseudo-elemento */
+}
+
+.barra-nav a:not(:last-child)::after {
+    content: ""; /* Crea una barra separadora */
+    width: 1px; /* Grosor de la barra */
+    height: 50%; /* Altura de la barra */
+    background-color: white;
+    position: absolute;
+    right: 0; /* Se coloca justo al final del enlace */
+    top: 25%; /* Centra la barra verticalmente */
+}
+
+/* Imagen debajo de la barra */
+.barra-imagen img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block;
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .barra-nav {
+        flex-wrap: wrap; /* Permite que los elementos salten a la siguiente línea en pantallas pequeñas */
+        height: auto; /* Ajusta la altura de la barra */
+    }
+
+    .barra-nav a {
+        flex: none; /* Los enlaces no comparten espacio de manera uniforme */
+        width: 100%; /* Cada enlace ocupa el ancho completo */
+        line-height: 38px; /* Asegura la altura suficiente para enlaces */
+        font-size: 12px; /* Texto más pequeño en dispositivos móviles */
+    }
+
+    .barra-nav a:not(:last-child)::after {
+        display: none; /* Oculta las barras separadoras en pantallas pequeñas */
+    }
+}
+
+.name{
+    background-color: #145284;
+    color: white;
+    font-size: 15px;
+    margin: 0px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.tr2{
+    background-color: #ebebeb;
+}
+
+footer{
+    margin-bottom: 0px;
+}
+
+.estadisticas {
+    display: flex; /* Coloca las columnas una al lado de la otra */
+    justify-content: space-between; /* Crea espacio entre las columnas */
+    align-items: flex-start; /* Alinea las columnas en la parte superior */
+    padding: 20px; /* Espaciado interno del contenedor */
+    padding-left: 0px;
+
+}
+
+.columna {
+    flex: 1; /* Hace que cada columna ocupe el mismo espacio */
+    padding: 5px; /* Espaciado interno entre el contenido y el borde */
+}
+
+.columna p {
+    margin: 5px 0; /* Espaciado entre los párrafos */
+    font-size: 17px; /* Tamaño de fuente */
+    line-height: 1.2; /* Espaciado entre líneas */
+    color: rgb(79, 79, 79); /* Color del texto */
+}
